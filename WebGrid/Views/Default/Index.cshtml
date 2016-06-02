@@ -1,0 +1,16 @@
+﻿@model global::WebGrid.Models.PagedList<global::WebGrid.Models.GridModel>
+@{
+    ViewBag.Title = "Index";
+    // WebGrid grid = new WebGrid(Model);
+    var grid = new WebGrid(null,rowsPerPage:Model.PageSize);
+    grid.Bind(Model.Items, rowCount: Model.Count, autoSortAndPage: false);
+    }
+
+<h2>Index</h2>
+
+
+<div id="agrid">
+    @grid.GetHtml()
+</div>
+
+
